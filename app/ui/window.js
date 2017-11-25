@@ -173,15 +173,15 @@ module.exports = class Window {
       rpc.emit('move');
     });
     rpc.on('close', () => {
-      let trash;
+      let closeFlag;
       sessions.forEach((session, key) => {
         let userCanceled = confirmClose(session.pty._pid);
         if (userCanceled) {
-          trash = -1;
+          closeFlag = -1;
           return;
         }
       });
-      if(trash == -1) return -1;
+      if(closeFlag == -1) return;
       window.close();
     });
     rpc.on('command', command => {

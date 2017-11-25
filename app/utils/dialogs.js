@@ -6,7 +6,7 @@ const showDialog = () => {
     type: 'warning',
     title: 'Confirm',
     buttons: ['Close', 'Cancel'],
-    message: 'Close this window?',
+    message: 'Close the app?',
     detail: 'There is still a process running in this terminal, closing it will kill it.'
   });
 };
