@@ -174,7 +174,7 @@ module.exports = class Window {
     });
     rpc.on('close', () => {
       let closeFlag;
-      sessions.forEach((session) => {
+      sessions.forEach(session => {
         let userCanceled = confirmClose(session.pty._pid);
         if (userCanceled) {
           closeFlag = -1;
