@@ -11,7 +11,7 @@ const showDialog = () => {
   });
 };
 
-exports.confirmClose = (pid) => {
+exports.confirmClose = pid => {
   let cmd = 'pgrep';
   let args = ['-P', pid];
 

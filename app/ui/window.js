@@ -174,14 +174,14 @@ module.exports = class Window {
     });
     rpc.on('close', () => {
       let closeFlag;
-      sessions.forEach((session, key) => {
+      sessions.forEach((session) => {
         let userCanceled = confirmClose(session.pty._pid);
         if (userCanceled) {
           closeFlag = -1;
           return;
         }
       });
-      if(closeFlag == -1) return;
+      if (closeFlag == -1) return;
       window.close();
     });
     rpc.on('command', command => {
